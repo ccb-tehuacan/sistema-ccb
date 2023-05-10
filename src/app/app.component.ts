@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front-ccb1';
+
+  qrResultString  ?: string
+
+  clearResult():void{
+    this.qrResultString = '';
+  }
+
+  onCodeResult(resultString : string) {
+    this.qrResultString = resultString
+  }
+
 }
