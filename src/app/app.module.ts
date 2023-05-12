@@ -10,6 +10,9 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     ZXingScannerModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

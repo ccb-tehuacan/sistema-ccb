@@ -1,14 +1,26 @@
 
 <!-- <router-outlet></router-outlet> -->
 
-<!-- <zxing-scanner (scanSuccess)="onCodeResult($event)"></zxing-scanner> -->
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<zxing-scanner (scanSuccess)="onCodeResult($event)"></zxing-scanner>
 
-<section class="results" *ngIf="qrResultString">
+<mat-form-field>
+    <mat-label>Resultado</mat-label>
+    <input matInput formControl="resultado" placeholder="Favorite food" value={{qrResultString}}>
+</mat-form-field>
+
+<!-- <div>
+    <small>Result</small>
+    <strong>{{qrResultString}}</strong>
+</div>
+<button mat-icon-button (click)="clearResult()">&times;</button> -->
+
+
+
+<!-- <section class="results" *ngIf="qrResultString">
     <div>
         <small>Result</small>
         <strong>{{qrResultString}}</strong>
     </div>
     <button mat-icon-button (click)="clearResult()">&times;</button>
-</section>
+</section> -->
 
