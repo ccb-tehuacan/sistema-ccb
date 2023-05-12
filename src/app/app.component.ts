@@ -47,7 +47,7 @@ export class AppComponent implements OnInit{
   onCodeResult(resultString : string) {
     this.qrResultString = resultString
     console.log(this.qrResultString)
-    // this.router.navigate(['https://google.com/'])
+    window.location.href = this.qrResultString
   }
 
   ngOnInit():void{
