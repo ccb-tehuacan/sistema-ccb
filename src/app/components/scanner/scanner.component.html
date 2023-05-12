@@ -1,0 +1,6 @@
+<zxing-scanner (scanSuccess)="onCodeResult($event)"></zxing-scanner>
+
+<mat-form-field>
+    <mat-label>Resultado</mat-label>
+    <input matInput formControl="resultado" placeholder="link" value={{qrResultString}}>
+</mat-form-field>

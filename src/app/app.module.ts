@@ -12,12 +12,14 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { ScannerComponent } from './components/scanner/scanner.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PruebaComponent
+    PruebaComponent,
+    ScannerComponent
   ],
   imports: [
     BrowserModule,
