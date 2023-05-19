@@ -28,7 +28,8 @@ export class ScannerComponent {
   onCodeResult(resultString : string) {
     this.qrResultString = resultString
     console.log(this.qrResultString)
-    window.location.href = this.qrResultString
+    //window.location.href = this.qrResultString
+    window.location.href = '/alumno'
   }
 
 }
