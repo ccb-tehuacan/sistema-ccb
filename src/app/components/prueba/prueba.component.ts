@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { PruebaService } from 'src/app/services/prueba.service';
+import { DialogAlumnoComponent } from '../dialog-alumno/dialog-alumno.component';
 
 
 @Component({
@@ -16,6 +18,7 @@ export class PruebaComponent {
     private servicio: PruebaService,
     private router: Router,
     private formBuilder :  UntypedFormBuilder,
+    private dialog: MatDialog,
   ) { }
 
   title = 'front-ccb1';
@@ -35,12 +38,22 @@ export class PruebaComponent {
     console.log(this.qrResultString)
     this.form.get('resultado')?.setValue(this.qrResultString)
     //window.location.href = this.qrResultString
+
+    const dialogRef = this.dialog.open(DialogAlumnoComponent, {
+      height: '400px',
+      width: '600px'
+      //data: {name: this.name, animal: this.animal},
+    });
+
+
   }
+
+  
 
   ngOnInit(): void {
     console.log("init")
 
-
+    
 
     this.servicio.getalumnos(
 

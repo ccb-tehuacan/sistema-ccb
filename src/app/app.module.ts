@@ -14,6 +14,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ScannerComponent } from './components/scanner/scanner.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { DialogAlumnoComponent } from './components/dialog-alumno/dialog-alumno.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
     AppComponent,
     PruebaComponent,
     ScannerComponent,
-    AlumnosComponent
+    AlumnosComponent,
+    DialogAlumnoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
     MatSlideToggleModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

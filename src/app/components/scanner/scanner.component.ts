@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { DialogAlumnoComponent } from '../dialog-alumno/dialog-alumno.component';
 
 @Component({
   selector: 'app-scanner',
@@ -8,28 +10,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./scanner.component.css']
 })
 export class ScannerComponent {
-  constructor( 
-    private formBuilder :  UntypedFormBuilder,
-    private router : Router
-  ){ }
-  
+  constructor(
+    private formBuilder: UntypedFormBuilder,
+    private router: Router,
+    private dialog: MatDialog,
+  ) { }
+
   title = 'front-ccb1';
 
-  qrResultString  ?: string
- 
+  qrResultString?: string
+
   form = this.formBuilder.group({
-    resultado : ['']
+    resultado: ['']
   })
-  
-  clearResult():void{
+
+  clearResult(): void {
     this.qrResultString = '';
   }
 
-  onCodeResult(resultString : string) {
+  onCodeResult(resultString: string) {
     this.qrResultString = resultString
     console.log(this.qrResultString)
-    //window.location.href = this.qrResultString
-    window.location.href = '/alumno'
+    window.location.href = this.qrResultString
+
+    
+
+    //window.location.href = '/alumno'
+
+
+
   }
+
+
+  
 
 }
