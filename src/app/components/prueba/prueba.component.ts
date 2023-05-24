@@ -41,8 +41,10 @@ export class PruebaComponent {
 
     const dialogRef = this.dialog.open(DialogAlumnoComponent, {
       height: '400px',
-      width: '600px'
-      //data: {name: this.name, animal: this.animal},
+      width: '600px',
+      data: {
+        alumno : this.qrResultString
+      },
     });
 
 

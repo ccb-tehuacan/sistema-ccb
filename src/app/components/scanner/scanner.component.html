@@ -1,6 +1,18 @@
-<zxing-scanner (scanSuccess)="onCodeResult($event)"></zxing-scanner>
+<button mat-button [matMenuTriggerFor]="menu" [routerLink]="['/prueba']">Alumnos</button>
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
 
-<mat-form-field>
-    <mat-label>Resultado</mat-label>
-    <input matInput formControl="resultado" placeholder="link" value={{qrResultString}}>
-</mat-form-field>
+
+<div style="margin: auto; max-width: 600px; padding: 1rem;">
+    <zxing-scanner (scanSuccess)="onCodeResult($event)"></zxing-scanner>
+
+    <mat-form-field>
+        <mat-label>Resultado</mat-label>
+        <input matInput formControl="resultado" placeholder="link" value={{qrResultString}}>
+    </mat-form-field>
+</div>
+
+

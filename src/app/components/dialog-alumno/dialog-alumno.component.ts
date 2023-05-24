@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dialog-alumno',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogAlumnoComponent implements OnInit{
   
+
+  alumnoNombre : String = ''
+
   ngOnInit(){
     this.notificacion();
+    this.alumnoNombre = this.data.alumno
   }
+
+  
+
+  constructor(
+    public dialogRef : MatDialogRef<DialogAlumnoComponent>,
+    @Inject(MAT_DIALOG_DATA) public data : {alumno : string}
+  ){ }
 
   notificacion() {
     const audio = new Audio('assets/sounds/sonido_notificación.mp3');
