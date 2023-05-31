@@ -1,0 +1,26 @@
+<table mat-table matSort [dataSource]="alumnos" class="mat-elevation-z8 demo-table">
+    <ng-container matColumnDef="nombre">
+        <th class="text-center" mat-header-cell *matHeaderCellDef mat-sort-header>
+            <strong>nombre</strong>
+        </th>
+        <td mat-cell *nombre="let row">
+            {{row.nombre}}
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="apellido_paterno">
+        <th class="text-center" mat-header-cell *matHeaderCellDef mat-sort-header>
+            <strong>apellido_paterno</strong>
+        </th>
+        <td mat-cell *matCellDef="let row">
+            {{row.apellido_paterno}}
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td> <!-- Nothing -->
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
