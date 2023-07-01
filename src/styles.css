@@ -1,4 +1,536 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body,
+.ngx-loading-text {
+    margin: 0;
+    font-family: "Rubik", "Helvetica Neue", sans-serif !important;
+}
+
+mat-tooltip-component>div {
+    font-size: 15px !important;
+    text-align: center;
+}
+
+mat-label,
+.mat-header-cell,
+.mat-button-wrapper>span,
+.mat-paginator-page-size-label,
+.mat-footer-cell,
+.mat-grid-tile,
+.table-default th,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+.custom-snackbar,
+.mat-simple-snackbar,
+.mat-simple-snackbar-action .mat-button-wrapper,
+.snack,
+.snack-error-message,
+.custom-sanckbar button,
+.snack button,
+.snack-error-message button,
+p,
+.ngx-loading-text,
+.mat-form-field-label,
+.mat-list-text,
+.title,
+.module,
+.mat-menu-item>span,
+mat-tooltip-component>div,
+.mat-paginator-range-label,
+.mat-tab-label,
+.mat-card-title,
+.mat-step-text-label,
+.mat-stepper-next>span,
+.mat-checkbox-label,
+.mat-card-subtitle,
+.mat-error,
+.mat-select-value-text,
+.mat-expansion-panel-header-description>span,
+.mat-expansion-panel-header-title>span {
+    font-family: "Rubik" !important;
+    font-variant: small-caps !important;
+}
+
+.mat-button-wrapper>span {
+    margin-left: 5px !important;
+    font-size: 15px !important;
+}
+
+.mat-option {
+    font-size: 12px !important;
+}
+
+th.mat-header-cell,
+.table-default th {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    padding: 3px 10px 3px 5px;
+    font-size: 16px;
+    text-align: center !important;
+    font-weight: 500 !important;
+    border: 0px !important;
+}
+
+
+mat-option,
+mat-radio-button,
+mat-select,
+input,
+textarea,
+.mat-cell {
+    text-transform: uppercase;
+    font-family: "Rubik" !important;
+}
+
+.mat-cell {
+    text-align: center;
+}
+
+.table-default {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    border-radius: 5px 5px 0 0;
+}
+
+.mat-select-panel {
+    scrollbar-width: none;
+}
+
+.mat-select-panel::-webkit-scrollbar-thumb {
+    background-color: rgba(125, 125, 125, 0.5) !important;
+    border-radius: 100% !important;
+    border: 0px solid !important;
+}
+
+.mat-select-panel::-webkit-scrollbar-track {
+    border-radius: 100% !important;
+    background-color: rgba(125, 125, 125, 0.5) !important;
+}
+
+.table-default table,
+table.mat-table {
+    margin: 0;
+    margin-bottom: 50px;
+    position: relative;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.mat-paginator-outer-container,
+.mat-paginator-container {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table-default th {
+    padding: 12px 15px;
+    font-weight: 500;
+    height: 40px;
+}
+
+.table-default td {
+    text-align: center;
+    background-color: transparent;
+    padding: 12px 15px;
+    font-size: 12pt;
+    font-weight: 400;
+    height: 80px;
+}
+
+mat-radio-button {
+    margin: 10px;
+}
+
+mat-label>h1 {
+    display: block;
+    text-align: center;
+    font-size: 1.5em !important;
+    margin-block-start: 0.83em !important;
+    margin-block-end: 0.83em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+    font-weight: bold !important;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+}
+
+mat-label>h2 {
+    display: block;
+    text-align: center;
+    font-size: 1.3em !important;
+    margin-block-start: 0.83em !important;
+    margin-block-end: 0.83em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+    font-weight: bold !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+mat-label>h3 {
+    display: block;
+    text-align: center;
+    font-size: 1.1em !important;
+    margin-block-start: 0.83em !important;
+    margin-block-end: 0.83em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+    font-weight: bold !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+mat-label>h4 {
+    display: block;
+    text-align: center;
+    font-size: 0.9em !important;
+    margin-block-start: 0.83em !important;
+    margin-block-end: 0.83em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.mat-drawer-inner-container,
+mat-drawer,
+app-sidemenu {
+    scrollbar-width: none;
+}
+
+.mat-dialog-content,
+.mat-drawer-content {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 2px;
+}
+
+.mat-drawer-content::-webkit-scrollbar-button:increment,
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+.mat-drawer-content::-webkit-scrollbar:horizontal {
+    height: 5px;
+}
+
+.mat-drawer-content::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.mat-drawer-content::-webkit-scrollbar:vertical {
+    width: 5px;
+}
+
+.mat-drawer-content::-webkit-scrollbar-button:increment,
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+.mat-drawer-content::-webkit-scrollbar:horizontal {
+    height: 5px;
+}
+
+.mat-drawer-content::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 0px solid;
+}
+
+.mat-drawer-content::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.boton {
+    margin: auto !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    width: 90% !important;
+}
+
+.div,
+.tabla {
+    margin: auto !important;
+    margin-bottom: 20px !important;
+    width: 90% !important;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 0px solid;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+form,
+.margins {
+    margin: auto !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    width: 90% !important;
+}
+
+.guardar {
+    float: right !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+table {
+    margin: auto !important;
+    width: 100% !important;
+}
+
+div>.mat-form-field {
+    font-size: 15px !important;
+    width: 100% !important;
+}
+
+.mat-grid-tile .mat-form-field {
+    font-size: 15px !important;
+    left: 10px;
+    right: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 95% !important;
+}
+
+form>mat-label {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.mat-form-field-label-wrapper,
+.mat-form-field-label {
+    font-size: large !important;
+    font-weight: 400;
+}
+
+
+.mat-paginator-page-size>.mat-form-field,
+.mat-paginator-page-size>.mat-paginator-page-size-label {
+    font-size: 15px !important;
+    width: 50% !important;
+}
+
+.spacer {
+    height: 30px !important;
+}
+
+
+.xbig_negrita_center,
+a {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+}
+
+.xbig_negrita_left {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    text-align: left !important;
+}
+
+
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+
+[data-title]:after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -1.6em;
+    left: 100%;
+    padding: 4px 4px 4px 8px;
+    white-space: nowrap;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0px 0px 4px #222;
+    -webkit-box-shadow: 0px 0px 4px #222;
+    box-shadow: 0px 0px 4px #222;
+    font-size: 15px !important;
+    opacity: 0;
+    z-index: 99999;
+    visibility: hidden;
+}
+
+[data-title] {
+    position: relative;
+}
+
+.course-box,
+.semestre-box {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.mat-form-field-type-mat-select:is(.mat-form-field-disabled) .mat-form-field-flex {
+    cursor: default !important;
+}
+
+.mat-checkbox-disabled {
+    cursor: not-allowed !important;
+}
+
+.mat-list-single-selected-option {
+    background-color: transparent !important;
+  }
+
+.mat-select-disabled .mat-select-value:hover,
+.mat-input-element:disabled:hover {
+    cursor: not-allowed !important;
+    -webkit-user-select: text !important;
+    -khtml-user-select: text !important;
+    -moz-user-select: text !important;
+    -o-user-select: text !important;
+    user-select: text !important;
+}
+
+.mat-footer-cell,
+.mat-paginator-outer-container,
+.mat-paginator-container {
+    font-weight: 500 !important;
+    text-align: center !important;
+    font-size: 15px !important;
+}
+
+.allow-pre {
+    white-space: pre !important;
+}
+
+.allow-bs,
+.mat-step-text-label {
+    white-space: break-spaces !important;
+}
+
+.scrollable {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.ngx-foreground-spinner {
+    background-color: transparent !important;
+    position: relative !important;
+}
+
+.loadOnlyIcon .ngx-foreground-spinner {
+    margin-left: 30px !important;
+}
+
+.loadWithText .ngx-foreground-spinner {
+    margin-left: 100px !important;
+}
+
+/* .ngx-overlay{
+    text-align: center !important;
+    position: fixed !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+} */
+
+.mat-form-field .mat-select.mat-select-disabled .mat-select-arrow {
+    color: transparent !important;
+}
+
+.mat-form-field .mat-select.mat-select-disabled .mat-select-arrow-wrapper {
+    color: transparent !important;
+}
+
+.card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/* #load{
+   
+ } */
+
+::ng-deep .carga-materia-dialog {
+    min-height: 80% !important;
+    min-width: 80% !important;
+}
+
+.mat-button-toggle-checked {
+    font-weight: bold !important;
+}
+
+.mat-checkbox-layout {
+    white-space: pre-line !important;
+}
+
+.form-container {
+    width: 50%;
+    margin: auto;
+}
+
+.mat-menu-submenu-icon {
+    display: none;
+}
+
+a.link:hover {
+    cursor: pointer;
+}
+
+.itemDisable {
+    cursor: not-allowed !important;
+}
+
+@media only screen and (max-width: 1200px) {
+    .form-container {
+        width: 60%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .form-container {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .form-container {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .form-container {
+        width: 90%;
+        margin: auto;
+    }
+}

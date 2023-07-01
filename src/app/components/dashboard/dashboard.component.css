@@ -1,0 +1,99 @@
+h3 {
+    color: #ff8000;
+    font-variant: small-caps;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+}
+.btn-aceptar {
+    width: 45%;
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+
+mat-sidenav-container {
+    height: 100%;
+}
+.dates-basic mat-form-field {
+    width: 30% !important;
+    margin: auto;
+}
+
+mat-form-field {
+    width: 45%;
+    margin: auto;
+}
+
+mat-card-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+mat-card-actions {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0 !important;
+}
+mat-card-actions > .btn-aceptar {
+   width: 40%;
+}
+.dates-basic {
+    display: flex;
+    width:98%;
+}
+
+@media only screen and (max-width: 992px) {
+    .mat-card {
+        margin: auto !important;
+        max-width: 40% !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .dates-basic mat-form-field {
+        width: 100% !important;
+        margin: auto;
+    }
+    .mat-card {
+        margin: auto !important;
+        max-width: 60% !important;
+    }
+    .dates-basic {
+        flex-wrap: wrap;
+    }
+    mat-form-field {
+        width: 100%;
+        
+    }
+    mat-card-actions > .btn-aceptar {
+        width: 100%;
+     }
+}
+
+@media only screen and (max-width: 576px) {
+    .mat-card {
+        margin: auto !important;
+        max-width: 90% !important;
+    }
+}
+
+
+
+.section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+

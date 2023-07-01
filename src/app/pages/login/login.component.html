@@ -1,0 +1,90 @@
+ <div id="container">
+    <form [formGroup]="formLogin">
+        <!-- <mat-card class="mat-elevation-z8">
+            <div class="row gx-0">
+                <mat-card-title>
+                    <mat-label>Iniciar Sesión</mat-label>
+                </mat-card-title>
+                <mat-divider class="d-lg-none" inset></mat-divider>
+                <mat-card-content>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombre de Usuario</mat-label>
+                        <input matInput name="username" placeholder="Nombre de usuario" 
+                        formControlName="username" type="text">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput name="password" placeholder="CONTRASEÑA"
+                            [type]="hide ? 'password' : 'text'" (keydown.enter)="$event.preventDefault()"
+                            (keydown.shift.enter)="$event.preventDefault()" (keydown.enter)="login()"
+                            (keydown.shift.enter)="login()" formControlName="password">
+                        <button type="button"  mat-icon-button matSuffix (click)="hide = !hide">
+                            <mat-icon color="primary">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary" type="submit" (click)="login()"
+                            [disabled]="!formLogin.valid">
+                            <span>Acceso</span>
+                        </button>
+                    </mat-card-actions>
+
+                </mat-card-content>
+            </div>
+        </mat-card> -->
+    
+        <mat-card class="mat-elevation-z8">
+            <div class="row gx-0">
+    
+              <div class="d-none d-lg-block col-12 col-lg-7 col-xl-8">
+                <img #image title="Club de Ciencias Basicas" class="img-login" mat-card-image
+                  src="assets/img/logo.png">
+              </div>
+              <div class="col-12 col-lg-5 col-xl-4">
+                <div id="container-login">
+                  <mat-card-title>
+                    <img class="responsive" [src]="logos" src="" alt="">
+                  </mat-card-title>
+                  <mat-divider class="d-lg-none" inset></mat-divider>
+                  <mat-card-title>
+                    <h3>Iniciar Sesión</h3>
+                  </mat-card-title>
+                  <mat-card-content>
+                    <mat-form-field floatLabel="always" appearance="outline">
+                      <mat-label>Nombre de usuario</mat-label>
+                      <input matInput name="username" placeholder="Usuario"
+                        formControlName="username" >
+                    </mat-form-field>
+    
+                    <mat-form-field floatLabel="always" appearance="outline">
+                      <mat-label>Contraseña</mat-label>
+                      <input matInput name="password" placeholder="CONTRASEÑA"
+                        [type]="hide ? 'password' : 'text'" (keydown.enter)="$event.preventDefault()"
+                        (keydown.shift.enter)="$event.preventDefault()" (keydown.enter)="login()"
+                        (keydown.shift.enter)="login()" formControlName="password">
+                      <button type="button"  mat-icon-button matSuffix (click)="hide = !hide">
+                        <mat-icon color="primary">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                    </mat-form-field>
+    
+                    
+        
+                    <mat-card-actions>
+                      <button mat-raised-button color="primary" type="submit" (click)="login()">
+                        <span>Acceso</span>
+                      </button>
+                    </mat-card-actions>
+                  </mat-card-content>
+                </div>
+    
+    
+              </div>
+    
+            </div>
+    
+          </mat-card>
+    
+    </form>
+</div>
+

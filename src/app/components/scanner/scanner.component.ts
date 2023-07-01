@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder } from '@angular/forms';
+import { FormControl, UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DialogAlumnoComponent } from '../dialog-alumno/dialog-alumno.component';
@@ -10,6 +10,9 @@ import { DialogAlumnoComponent } from '../dialog-alumno/dialog-alumno.component'
   styleUrls: ['./scanner.component.css']
 })
 export class ScannerComponent {
+  
+  resultado?: FormControl<any>
+  
   constructor(
     private formBuilder: UntypedFormBuilder,
     private router: Router,
