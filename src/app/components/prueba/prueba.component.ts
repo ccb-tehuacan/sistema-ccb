@@ -38,18 +38,18 @@ export class PruebaComponent {
     console.log(this.qrResultString)
     this.form.get('resultado')?.setValue(this.qrResultString)
     //window.location.href = this.qrResultString
+    this.mostrarDialog()
+  }
 
+  mostrarDialog(){
     const dialogRef = this.dialog.open(DialogAlumnoComponent, {
       height: '400px',
       width: '600px',
       data: {
         alumno : this.qrResultString
       },
-    });
-
-
+    }); 
   }
-
   
 
   ngOnInit(): void {

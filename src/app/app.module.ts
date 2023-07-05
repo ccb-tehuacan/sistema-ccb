@@ -20,13 +20,18 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 
 
+import { MaterialDesignModule } from './MaterialDesign/material-design.module';
+import { InicioComponent } from './components/inicio/inicio.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     PruebaComponent,
     ScannerComponent,
     AlumnosComponent,
-    DialogAlumnoComponent
+    DialogAlumnoComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatDialogModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MaterialDesignModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,11 +4,12 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { AppComponent } from './app.component';
 import { ScannerComponent } from './components/scanner/scanner.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 const routes: Routes = [
   {
     path:'' ,
-    component: ScannerComponent 
+    component: InicioComponent 
   },
   {
     path:'prueba' ,
