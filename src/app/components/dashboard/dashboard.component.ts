@@ -12,6 +12,8 @@ export class DashboardComponent {
     private alumnoService : AlumnoServiceService
   ){}
 
+    unam = '/assets/img/unam_logo.png'
+    buap = '/assets/img/buap_logo.jpg'
   ngOnInit(){
     
   }
