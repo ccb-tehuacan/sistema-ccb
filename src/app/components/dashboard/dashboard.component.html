@@ -1,0 +1,94 @@
+<button mat-button [routerLink]="['/prueba']">Calificaciones </button>
+<button mat-button>Reportes</button>
+<button mat-button [routerLink]="['/alumnos']">Alumnos</button>
+<button mat-button>Pagos</button>
+
+<div class="margins align-r">
+
+    <div>
+        <h3>Bienvenido</h3>
+        <h3>user</h3>
+    </div>
+
+
+    <div class="spacer"></div>
+    <div class="row">
+
+        <div class="col-12 col-sm-12 col-md-4">
+            
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <!-- <mat-card-title>
+                            <img class="responsive" [src]="buap" src="" alt="">
+                        </mat-card-title> -->
+                        
+                        <mat-card-title>Cursos B.U.A.P.</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        
+                        <mat-label><h5>Admisión</h5></mat-label>
+                        <br>
+                            <h4><strong>Pago Mensual: $650</strong></h4>
+                        
+                    </mat-card-content>
+
+                    <mat-card-actions>
+                        <mat-dialog-actions class="row">
+                            <div class="col-12 col-sm-6 gy-2 gy-sm-0 text-center text-sm-end">
+                                    <button mat-raised-button color="secondary" cdkFocusInitial>
+                                        <!-- (click)="editarCN()" -->
+                                        <span>Detalles</span>
+                                    </button>
+                            </div>
+                            
+                        </mat-dialog-actions>
+                    </mat-card-actions>
+                </mat-card>
+        
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-4">
+            
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <!-- <mat-card-title>
+                        <img class="responsive" [src]="unam" src="" alt="">
+                    </mat-card-title> -->
+                    <mat-card-title>Cursos U.N.A.M.</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    
+                    <mat-label><h5>Admisión</h5></mat-label>
+                    <br>
+                        <h4><strong>Pago Mensual: $700</strong></h4>
+                        
+                        
+                </mat-card-content>
+
+                <mat-card-actions>
+                    <mat-dialog-actions class="row">
+                        <div class="col-12 col-sm-6 gy-2 gy-sm-0 text-center text-sm-end">
+                                <button mat-raised-button color="primary" cdkFocusInitial
+                                    >
+                                    <!-- (click)="editarCN()" -->
+                                    <span>Detalles</span>
+                                </button>
+                        </div>
+                        
+                    </mat-dialog-actions>
+                </mat-card-actions>
+            </mat-card>
+    
+        </div>
+    
+        
+
+
+
+    </div>
+
+    
+</div>
+
+
+
