@@ -7,6 +7,7 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TablaAlumnosComponent } from './components/tabla-alumnos/tabla-alumnos.component';
 
 const routes: Routes = [
   {
@@ -28,8 +29,11 @@ const routes: Routes = [
   {
     path:'dashboard' ,
     component: DashboardComponent
+  },
+  {
+    path:'alumno-cursos' ,
+    component: TablaAlumnosComponent
   }
-  
 
 ];
 

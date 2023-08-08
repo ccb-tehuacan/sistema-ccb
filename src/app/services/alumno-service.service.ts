@@ -19,4 +19,10 @@ export class AlumnoServiceService {
   return this.http.get<any[]>(url)
   }
 
+  getalumnosCursos():Observable<any[]>{
+    const url:string=`${this.apiUrl}/alumnos-cursos`;
+  
+  return this.http.get<any[]>(url)
+  }
+  
 }
