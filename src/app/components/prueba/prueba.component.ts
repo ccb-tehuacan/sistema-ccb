@@ -24,7 +24,8 @@ export class PruebaComponent {
   title = 'front-ccb1';
 
   qrResultString  ?: string
- 
+  activar_camara : boolean = false
+
   form = this.formBuilder.group({
     resultado : ['']
   })
@@ -42,9 +43,8 @@ export class PruebaComponent {
   }
 
   mostrarDialog(){
+    this.activar_camara=false
     const dialogRef = this.dialog.open(DialogAlumnoComponent, {
-      height: '400px',
-      width: '600px',
       data: {
         alumno : this.qrResultString
       },
@@ -63,4 +63,10 @@ export class PruebaComponent {
       console.log(data)
     })
   }
+
+  activarCamara(){
+    this.activar_camara=true
+  }
+
+
 }

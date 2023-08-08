@@ -8,6 +8,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TablaAlumnosComponent } from './components/tabla-alumnos/tabla-alumnos.component';
+import { CursosBuapComponent } from './components/cursos-buap/cursos-buap.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
     component: LoginComponent 
   },
   {
-    path:'prueba' ,
+    path:'asistencias' ,
     component: PruebaComponent 
   },
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path:'alumno-cursos' ,
     component: TablaAlumnosComponent
+  },
+  {
+    path:'cursos-buap' ,
+    component: CursosBuapComponent
   }
 
 ];

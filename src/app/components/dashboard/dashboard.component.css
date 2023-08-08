@@ -1,3 +1,9 @@
+.img_curso{
+    width: 300px;
+    height: auto;
+}
+
+
 h3 {
     color: #ff8000;
     font-variant: small-caps;
@@ -96,4 +102,14 @@ mat-card-actions > .btn-aceptar {
     height: 60px;
 }
 
+
+.custom-blue-button {
+    background-color: #7ab6f1; /* Color azul */
+    color: #fff; /* Color de texto blanco */
+  }
+  
+ 
+ .custom-blue-button:hover {
+    background-color: #2389fd; /* Color azul más oscuro al pasar el cursor */
+  }
 

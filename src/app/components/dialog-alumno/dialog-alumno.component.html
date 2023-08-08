@@ -1,10 +1,23 @@
-<h1 mat-dialog-title>Asistencia registrada</h1>
-<div mat-dialog-content>
-  <p>DATOS</p>
-  <mat-form-field>
-    <p>{{alumnoNombre}}</p>
-  </mat-form-field>
-</div>
-<!-- <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button> 
-</div> -->
+
+ <h2 mat-dialog-title>Asistencia</h2>
+ <mat-dialog-content   style="margin:auto; width: 400px; align-items: center ;">
+   
+   <h4><strong>Datos delAlumno</strong></h4>
+   <mat-divider></mat-divider>
+   <br>
+   <h4><strong>Nombre(s): </strong> {{nombre_alumno}}</h4> 
+   <h4><strong>Apellido Paterno: </strong>{{apellido_paterno}}</h4> 
+   <h4><strong>Apellido Materno: </strong>{{apellido_materno}}</h4> 
+
+   <h4><strong>Grupo</strong> {{grupo_alumno}}</h4> 
+
+
+
+ </mat-dialog-content>
+
+ <mat-dialog-actions align="end">
+   <!-- <button mat-button mat-dialog-close>Cancel</button> -->
+   <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Cerrar</button>
+ </mat-dialog-actions>
+
+
