@@ -7,6 +7,7 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CursosBuapComponent } from './components/cursos-buap/cursos-buap.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,7 @@ const routes: Routes = [
     component: LoginComponent 
   },
   {
-    path:'prueba' ,
+    path:'asistencias' ,
     component: PruebaComponent 
   },
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path:'dashboard' ,
     component: DashboardComponent
+  },
+  {
+    path:'cursos-buap' ,
+    component: CursosBuapComponent
   }
   
 

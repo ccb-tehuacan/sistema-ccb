@@ -1,0 +1,6 @@
+.btnCamera{
+    display: flex; /* Activa el modo flexbox en el div */
+    justify-content: center; /* Centra horizontalmente */
+    /*align-items: center; /* Centra verticalmente */
+    /*height: 100vh; */
+}

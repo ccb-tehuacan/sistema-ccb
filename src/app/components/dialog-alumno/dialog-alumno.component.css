@@ -1,0 +1,11 @@
+.snackbar-success {
+    background-color: #43a047; /* Color de fondo verde para éxito */
+    color: #fff; /* Color de texto blanco */
+    
+  }
+  
+  /* Estilos para el snackbar de error */
+  .snackbar-error {
+    background-color: #d32f2f; /* Color de fondo rojo para error */
+    color: #fff;
+  }

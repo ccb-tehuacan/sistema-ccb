@@ -32,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TablaAlumnosComponent } from './components/tabla-alumnos/tabla-alumnos.component';
 import { MatTableModule } from '@angular/material/table';
+import { CursosBuapComponent } from './components/cursos-buap/cursos-buap.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MatTableModule } from '@angular/material/table';
     DialogAlumnoComponent,
     LoginComponent,
     DashboardComponent,
-    TablaAlumnosComponent
+    TablaAlumnosComponent,
+    CursosBuapComponent
   ],
   imports: [
     BrowserModule,
