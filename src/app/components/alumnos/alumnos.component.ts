@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { AlumnoServiceService } from 'src/app/services/alumno-service.service';
+import { DialogAgregarAlumnoComponent } from '../dialog-agregar-alumno/dialog-agregar-alumno.component';
 
 @Component({
   selector: 'app-alumnos',
@@ -11,8 +13,13 @@ export class AlumnosComponent {
 
   displayedColumns: string[] = ['nombre','turno','statusPago','tipoPago','pago','opciones'];
 
+  textoBoton: string = "Agregar Alumno";
+  imagenBoton: string = "add_circle";
+
+
   constructor(
-    private alumnoService : AlumnoServiceService
+    private alumnoService : AlumnoServiceService,
+    private dialog : MatDialog,
   ){}
 
   dataSource = new MatTableDataSource<any>([]);
@@ -63,6 +70,10 @@ export class AlumnosComponent {
 
   eliminar(objeto: any) {
     console.log(objeto)
+  }
+
+  openDialog(){
+    const dialogAlumno = this.dialog.open(DialogAgregarAlumnoComponent)
   }
 
 }
