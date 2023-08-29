@@ -33,6 +33,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TablaAlumnosComponent } from './components/tabla-alumnos/tabla-alumnos.component';
 import { MatTableModule } from '@angular/material/table';
 import { CursosBuapComponent } from './components/cursos-buap/cursos-buap.component';
+import { CursosUnamComponent } from './components/cursos-unam/cursos-unam.component';
+import { DialogAgregarAlumnoComponent } from './components/dialog-agregar-alumno/dialog-agregar-alumno.component';
+
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { DialogCalificacionesComponent } from './components/dialog-calificaciones/dialog-calificaciones.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,10 @@ import { CursosBuapComponent } from './components/cursos-buap/cursos-buap.compon
     LoginComponent,
     DashboardComponent,
     TablaAlumnosComponent,
-    CursosBuapComponent
+    CursosBuapComponent,
+    CursosUnamComponent,
+    DialogAgregarAlumnoComponent,
+    DialogCalificacionesComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +71,8 @@ import { CursosBuapComponent } from './components/cursos-buap/cursos-buap.compon
     MatCardModule,
     MatIconModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    NgxQRCodeModule,
 
   ],
   providers: [],

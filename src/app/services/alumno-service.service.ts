@@ -25,4 +25,21 @@ export class AlumnoServiceService {
   return this.http.get<any[]>(url)
   }
   
+
+  getNombreAlumno(id_alumno : number):Promise<any>{
+    const url: string = `${this.apiUrl}/alumnos/nombre/${id_alumno}`;
+
+    return new Promise<any>((resolve, reject) => {
+      this.http.get<any>(url).subscribe(
+        (response) => {
+          resolve(response);
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
+
+
+  }
 }
