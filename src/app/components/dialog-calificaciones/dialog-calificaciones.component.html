@@ -6,28 +6,29 @@
     
     <h2 mat-dialog-title>Calificaciones {{alumno}}</h2>
     <mat-dialog-content>
+        <form [formGroup]="formMaterias">
         <div *ngFor="let materia of calificaciones; let i = index">
-
+            
             <div class="row">
                 <div class="col-12 col-sm-4 col-md-4">
                     <h4><strong> {{materia.nombre_Materia}}</strong></h4>
                 </div>
                 <div class="col-12 col-sm-5 col-md-5">
                     <mat-form-field>
-                        <input maxlength="2" placeholder="Calificación" matInput value="{{materia.calificion}}"
-                            max=10 type="number">
-                        <!-- formControlName="no_de_control"  -->
+                        <input  maxlength="2" [value]="materia.calificion"
+                        placeholder="Calificación" matInput
+                            max=10 type="number" >
                     </mat-form-field>
                 </div>
                 <div class="col-12 col-sm-2 col-md-2">
-                    <button mat-raised-button>
+                    <button (click)="calificar(materia)" mat-raised-button>
                         <span>Calificar</span>
                     </button>
                 </div>
             </div>
-
+            
         </div>
-
+        </form>
 
     </mat-dialog-content>
 </div>

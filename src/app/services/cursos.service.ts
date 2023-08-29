@@ -51,6 +51,24 @@ export class CursosService {
     });
   }
 
+  asignarCalificacion(alumno:number, materia:number, calificacion:number):Promise<any>{
+    const url: string = `${this.apiUrl}/alumnos-cursos/asignar-calificaciones/${alumno}/${materia}/${calificacion}`;
+    
+    return new Promise<any[]>((resolve, reject) => {
+      this.http.get<any[]>(url).subscribe(
+        (response) => {
+          resolve(response);
+        },
+        (error) => {
+          reject(error);
+        }
+      );
+    });
+  }
+
+
+
+
 
 
 
