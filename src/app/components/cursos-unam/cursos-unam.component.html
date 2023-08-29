@@ -30,6 +30,14 @@
             <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
         </ng-container>
 
+        <ng-container  matColumnDef="opciones">
+          <th mat-header-cell *matHeaderCellDef > Opciones </th>
+          <td mat-cell *matCellDef="let element"> 
+            <button mat-icon-button (click)="getCalificacionesAlumnos(element)"><mat-icon>history_edu</mat-icon></button>
+          </td>
+      </ng-container>
+
+
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
