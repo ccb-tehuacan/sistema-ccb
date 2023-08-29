@@ -29,7 +29,7 @@ export class DialogAlumnoComponent implements OnInit{
   ){ }
 
   ngOnInit(){
-    //this.notificacion();
+    this.notificacion();
     this.datos_alumno = this.data.alumno
     const nombre = this.datos_alumno.split('\n')
     
