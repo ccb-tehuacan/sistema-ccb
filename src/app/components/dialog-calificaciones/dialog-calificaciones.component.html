@@ -9,23 +9,54 @@
         <form [formGroup]="formMaterias">
         <div *ngFor="let materia of calificaciones; let i = index">
             
-            <div class="row">
-                <div class="col-12 col-sm-4 col-md-4">
-                    <h4><strong> {{materia.nombre_Materia}}</strong></h4>
+            <ng-container *ngIf="materia.calificion!=null else asignar">
+                <div class="row">
+                    <div class="col-12 col-sm-4 col-md-4">
+                        <h4><strong> {{materia.nombre_Materia}}</strong></h4>
+                    </div>
+                    <div class="col-12 col-sm-5 col-md-5">
+                        <mat-form-field>
+                            <input  maxlength="2" [value]="materia.calificion"
+                            [disabled]="true" placeholder="Calificación" matInput
+                                max=10 type="number">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col-12 col-sm-2 col-md-2">
+                        <button (click)="calificar(materia)" mat-raised-button>
+                            <span>Editar</span>
+                        </button>
+                    </div>
+                    
                 </div>
-                <div class="col-12 col-sm-5 col-md-5">
-                    <mat-form-field>
-                        <input  maxlength="2" [value]="materia.calificion"
-                        placeholder="Calificación" matInput
-                            max=10 type="number" >
-                    </mat-form-field>
+            </ng-container>
+
+                
+
+            <ng-template #asignar>
+                
+                <div class="row">
+                    <div class="col-12 col-sm-4 col-md-4">
+                        <h4><strong> {{materia.nombre_Materia}}</strong></h4>
+                    </div>
+                    <div class="col-12 col-sm-5 col-md-5">
+                        <mat-form-field>
+                            <input  maxlength="2" [value]="materia.calificion"
+                            placeholder="Calificación" matInput formControlName="calificacion"
+                                max=10 type="number">
+                        </mat-form-field>
+                    </div>
+                    
+                    <div class="col-12 col-sm-2 col-md-2">
+                        <button (click)="calificar(materia)" mat-raised-button>
+                            <span>Calificar</span>
+                        </button>
+                    </div>
+
                 </div>
-                <div class="col-12 col-sm-2 col-md-2">
-                    <button (click)="calificar(materia)" mat-raised-button>
-                        <span>Calificar</span>
-                    </button>
-                </div>
-            </div>
+                
+                
+            </ng-template>
             
         </div>
         </form>
