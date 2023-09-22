@@ -38,6 +38,8 @@ import { DialogAgregarAlumnoComponent } from './components/dialog-agregar-alumno
 
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { DialogCalificacionesComponent } from './components/dialog-calificaciones/dialog-calificaciones.component';
+import { PagosComponent } from './components/pagos/pagos.component';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { DialogCalificacionesComponent } from './components/dialog-calificacione
     CursosBuapComponent,
     CursosUnamComponent,
     DialogAgregarAlumnoComponent,
-    DialogCalificacionesComponent
+    DialogCalificacionesComponent,
+    PagosComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,7 @@ import { DialogCalificacionesComponent } from './components/dialog-calificacione
     ReactiveFormsModule,
     MatTableModule,
     NgxQRCodeModule,
-
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

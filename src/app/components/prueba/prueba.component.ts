@@ -30,6 +30,10 @@ export class PruebaComponent {
     resultado : ['']
   })
 
+  activarCamara(){
+    this.activar_camara=true
+  }
+
   clearResult():void{
     this.qrResultString = '';
   }
@@ -38,7 +42,7 @@ export class PruebaComponent {
     this.qrResultString = resultString
     console.log(this.qrResultString)
     this.form.get('resultado')?.setValue(this.qrResultString)
-    //window.location.href = this.qrResultString
+    
     this.mostrarDialog()
   }
 
@@ -64,9 +68,7 @@ export class PruebaComponent {
     })
   }
 
-  activarCamara(){
-    this.activar_camara=true
-  }
+  
 
 
 }

@@ -2,7 +2,7 @@
 <button mat-button [matMenuTriggerFor]="menu">Menú</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item [routerLink]="['/alumnos']">Alumnos</button>
-  <button mat-menu-item>Reportes</button>
+  <!-- <button mat-menu-item>Reportes</button> -->
   <button mat-menu-item>Pagos</button>
 </mat-menu>
 
@@ -17,13 +17,13 @@
 <ng-container *ngIf="activar_camara">
         <div style="margin: auto; max-width: 600px; padding: 1rem;">
                 <h1 class="btnCamera">Escanee el codigo QR del Alumno</h1>
+                
                 <zxing-scanner (scanSuccess)="onCodeResult($event)"></zxing-scanner>
         
                 <mat-form-field>
                         <mat-label>
                                 Datos Alumno
                         </mat-label>
-                        <!-- <input matInput placeholder="Alumno" value={{qrResultString}}> -->
                 </mat-form-field>
         </div>
 </ng-container>

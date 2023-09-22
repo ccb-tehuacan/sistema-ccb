@@ -10,6 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TablaAlumnosComponent } from './components/tabla-alumnos/tabla-alumnos.component';
 import { CursosBuapComponent } from './components/cursos-buap/cursos-buap.component';
 import { CursosUnamComponent } from './components/cursos-unam/cursos-unam.component';
+import { PagosComponent } from './components/pagos/pagos.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,11 @@ const routes: Routes = [
   {
     path:'cursos-unam' ,
     component: CursosUnamComponent
-  }
+  },
+  {
+    path:'pagos' ,
+    component: PagosComponent
+  },
 
 ];
 
