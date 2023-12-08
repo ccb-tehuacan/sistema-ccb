@@ -1,6 +1,9 @@
 import { CDK_TREE_NODE_OUTLET_NODE } from '@angular/cdk/tree';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
+import { NgxQRCodeModule, QrcodeComponent } from 'ngx-qrcode2';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-dialog-agregar-alumno',
@@ -60,12 +63,47 @@ export class DialogAgregarAlumnoComponent implements OnInit{
     console.log(nombre)
   }
 
+
+  @ViewChild('qrCode') qrCode!: QrcodeComponent;
+
   getQR(){
     let id = "1"
     let nombre = id+'\n'+this.formAlumno.get('nombre')?.value +' '+this.formAlumno.get('apellido_paterno')?.value+' '+this.formAlumno.get('apellido_materno')?.value +'\n'+'BU_M5'
 
     console.log(nombre)
     this.textoParaQR = nombre
+
+   
+
+
+
   }
+
+
+  generarPDF() {
+    const pdf = new jsPDF();
+  
+    // Use html2canvas to convert the QR code element to an image
+    html2canvas(this.qrCode.qrcElement.nativeElement).then((canvas) => {
+      const qrCodeImage = canvas.toDataURL('image/png');
+  
+      pdf.text('FICHA DE DATOS', 90, 10);
+      pdf.addImage(qrCodeImage, 'PNG', 60, 20, 400, 100);
+      //pdf.save('ficha.pdf');
+
+       // Obtener el contenido del PDF como una cadena de datos
+       pdf.output('dataurlnewwindow');
+
+       
+  
+
+
+
+
+
+    });
+  }
+
+
 
 }

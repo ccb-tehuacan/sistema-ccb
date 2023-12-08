@@ -4,35 +4,6 @@
     <!-- [linear]="true" -->
     <mat-stepper #stepper>
         <mat-step [stepControl]="formTutor">
-            <!-- <form [formGroup]="formTutor">
-                <ng-template matStepLabel>Datos del Tutor</ng-template>
-
-                <mat-form-field>
-                    <mat-label>Nombre(s):</mat-label>
-                    <input matInput placeholder="Nombre" formControlName="nombre_tutor" required>
-                </mat-form-field>
-
-                <mat-form-field>
-                    <mat-label>Apellido Paterno: </mat-label>
-                    <input matInput placeholder="Nombre" formControlName="nombre_tutor" required>
-                </mat-form-field>
-
-                <mat-form-field>
-                    <mat-label>Apellido Materno: </mat-label>
-                    <input matInput placeholder="Nombre" formControlName="nombre_tutor" required>
-                </mat-form-field>
-
-                <mat-form-field>
-                    <mat-label>Telefono de Contacto: </mat-label>
-                    <input matInput placeholder="Nombre" formControlName="nombre_tutor" required>
-                </mat-form-field>
-
-
-
-                <div>
-                    <button mat-button matStepperNext>Next</button>
-                </div>
-            </form> -->
             <form [formGroup]="formTutor">
                 <ng-template matStepLabel>Datos del Tutor</ng-template>
 
@@ -243,9 +214,9 @@
             <ng-template matStepLabel>Generación QR</ng-template>
             <p>¡Listo , ya eres alumno!</p>
             <span> Este es tu código QR único y personal para que tomes asistencia en tus clases</span>
-            <ngx-qrcode [value]='textoParaQR'></ngx-qrcode>
+            <ngx-qrcode #qrCode [value]='textoParaQR'></ngx-qrcode>
             <br>
-
+            <button mat-raised-button color="primary" (click)="generarPDF()">Descargar PDF</button>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
                 <button mat-button (click)="stepper.reset()">Reset</button>
@@ -253,12 +224,4 @@
         </mat-step>
     </mat-stepper>
 
-
-
 </mat-dialog-content>
-
-<!-- <mat-dialog-actions align="end">
-    
-    <button mat-button [mat-dialog-close]="true">Cerrar</button>
-    <button mat-button cdkFocusInitial onclick="guardarAlumno()">Guardar</button>
-</mat-dialog-actions> -->
