@@ -65,6 +65,24 @@ export class DialogAgregarAlumnoComponent implements OnInit{
 
 
   @ViewChild('qrCode') qrCode!: QrcodeComponent;
+  selectedImage: HTMLImageElement | null = null;
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+  
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.selectedImage = new Image();
+        this.selectedImage.src = e.target.result;
+        this.selectedImage.onload = () => {
+          // Ahora que la imagen está cargada, puedes generar el PDF
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
 
   getQR(){
     let id = "1"
@@ -90,6 +108,16 @@ export class DialogAgregarAlumnoComponent implements OnInit{
       pdf.text('FICHA DE DATOS', 90, 10);
       pdf.addImage(qrCodeImage, 'PNG', 60, 20, 400, 100);
       //pdf.save('ficha.pdf');
+
+      if (this.selectedImage) {
+        const xPos = 10; // Posición X de la imagen en el PDF
+        const yPos = 80; // Posición Y de la imagen en el PDF
+        const imgWidth = 50; // Ancho de la imagen en el PDF
+        const imgHeight = 50; // Altura de la imagen en el PDF
+  
+        pdf.addImage(this.selectedImage, 'JPEG', xPos, yPos, imgWidth, imgHeight);
+      }
+
 
        // Obtener el contenido del PDF como una cadena de datos
        pdf.output('dataurlnewwindow');

@@ -216,6 +216,11 @@
             <span> Este es tu código QR único y personal para que tomes asistencia en tus clases</span>
             <ngx-qrcode #qrCode [value]='textoParaQR'></ngx-qrcode>
             <br>
+            <input type="file" (change)="onFileSelected($event)" accept="image/*">
+            <img *ngIf="selectedImage" [src]="selectedImage" alt="Selected Image">
+            <br>
+
+
             <button mat-raised-button color="primary" (click)="generarPDF()">Descargar PDF</button>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
