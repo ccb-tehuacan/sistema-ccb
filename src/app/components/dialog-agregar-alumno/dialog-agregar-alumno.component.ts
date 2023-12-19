@@ -7,6 +7,9 @@ import { Alumno } from 'src/app/interfaces/alumno.interface';
 import { AlumnoServiceService } from 'src/app/services/alumno-service.service';
 import { QRCodeComponent } from 'ngx-qrcode2';
 
+import { NgxQRCodeModule, QrcodeComponent } from 'ngx-qrcode2';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-dialog-agregar-alumno',
@@ -68,54 +71,29 @@ export class DialogAgregarAlumnoComponent implements OnInit {
   }
 
 
-  @ViewChild('qrImage') qrImage ?: ElementRef 
+  @ViewChild('qrCode') qrCode!: QrcodeComponent;
+  selectedImage: HTMLImageElement | null = null;
 
-  async getQR() {
-
-    const _Alumno: Alumno = {
-      nombre          : this.formAlumno.get('nombre')?.value,
-      apellido_paterno: this.formAlumno.get('apellido_paterno')?.value,
-      apellido_materno: this.formAlumno.get('apellido_materno')?.value,
-      fecha_nacimiento: this.formAlumno.get('fecha_nacimiento')?.value,
-
-      tipo_pago    : parseInt(this.formAlumno.get('tipo_pago')?.value),
-      pago_mensual : this.formAlumno.get('pago_mensual')?.value,
-      descuento    : parseInt(this.formAlumno.get('descuento')?.value??0),
-      fecha_pago   : this.formAlumno.get('fecha_pago')?.value,
-      tipo_alumno  : this.formAlumno.get('tipo_alumno')?.value,
-      correo      : this.formAlumno.get('correo')?.value,
-      telefono    : this.formAlumno.get('telefono')?.value,
-      turno       : this.formAlumno.get('turno')?.value,
-
-      ciclo_escolar           : this.formAlumno.get('ciclo_escolar')?.value,
-      proxima_fecha_pago      : this.formAlumno.get('proxima_fecha_pago')?.value,
-      nombre_tutor            : this.formTutor.get('nombre_tutor')?.value,
-      apellido_paterno_tutor  : this.formTutor.get('apellido_paterno_tutor')?.value,
-      apellido_materno_tutor  : this.formTutor.get('apellido_materno_tutor')?.value,
-      telefono_tutor          : this.formTutor.get('telefono_tutor')?.value,
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+  
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.selectedImage = new Image();
+        this.selectedImage.src = e.target.result;
+        this.selectedImage.onload = () => {
+          // Ahora que la imagen está cargada, puedes generar el PDF
+        };
+      };
+      reader.readAsDataURL(file);
     }
-
-    console.log(_Alumno)
-
-    this.alumnoService.saveAlumnos(_Alumno)
-    .subscribe(res=> {
-      console.log(res)
-    },err =>{
-      console.log(err)
-    })
+  }
 
 
-    const alumno = await this.alumnoService.getAlumnoPromise(
-      this.formAlumno.get('nombre')?.value,
-      this.formAlumno.get('apellido_paterno')?.value,
-      this.formAlumno.get('apellido_materno')?.value,
-      moment(_Alumno.fecha_nacimiento).format('YYYY-MM-DD')
-    )
-
-    console.log(alumno)
-
-    let id = parseInt(alumno.id_alumnos)
-    let nombre = id + '\n' + this.formAlumno.get('nombre')?.value + ' ' + this.formAlumno.get('apellido_paterno')?.value + ' ' + this.formAlumno.get('apellido_materno')?.value + '\n' + 'BU_M5'
+  getQR(){
+    let id = "1"
+    let nombre = id+'\n'+this.formAlumno.get('nombre')?.value +' '+this.formAlumno.get('apellido_paterno')?.value+' '+this.formAlumno.get('apellido_materno')?.value +'\n'+'BU_M5'
 
     console.log(nombre)
     this.textoParaQR = nombre
@@ -125,6 +103,48 @@ export class DialogAgregarAlumnoComponent implements OnInit {
     img.src = NgxQRCodeModule.toDataURL(textoParaQR)
 
 
+
+   
+
+
+
   }
+
+
+  generarPDF() {
+    const pdf = new jsPDF();
+  
+    // Use html2canvas to convert the QR code element to an image
+    html2canvas(this.qrCode.qrcElement.nativeElement).then((canvas) => {
+      const qrCodeImage = canvas.toDataURL('image/png');
+  
+      pdf.text('FICHA DE DATOS', 90, 10);
+      pdf.addImage(qrCodeImage, 'PNG', 60, 20, 400, 100);
+      //pdf.save('ficha.pdf');
+
+      if (this.selectedImage) {
+        const xPos = 10; // Posición X de la imagen en el PDF
+        const yPos = 80; // Posición Y de la imagen en el PDF
+        const imgWidth = 50; // Ancho de la imagen en el PDF
+        const imgHeight = 50; // Altura de la imagen en el PDF
+  
+        pdf.addImage(this.selectedImage, 'JPEG', xPos, yPos, imgWidth, imgHeight);
+      }
+
+
+       // Obtener el contenido del PDF como una cadena de datos
+       pdf.output('dataurlnewwindow');
+
+       
+  
+
+
+
+
+
+    });
+  }
+
+
 
 }
