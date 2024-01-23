@@ -1,9 +1,9 @@
 <h2 mat-dialog-title>Agregar Alumno</h2>
 <mat-dialog-content>
-    <!-- style="margin:auto; width: 400px; align-items: center ;"> -->
-    <!-- [linear]="true" -->
+    
     <mat-stepper #stepper>
         <mat-step [stepControl]="formTutor">
+            
             <form [formGroup]="formTutor">
                 <ng-template matStepLabel>Datos del Tutor</ng-template>
 
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-field">
-                    <mat-label>Apellido Materno:</mat-label>
+                    <mat-label>Apellido Materno: </mat-label>
                     <mat-form-field>
                         <input matInput formControlName="apellido_materno_tutor"
                             required>
@@ -34,8 +34,7 @@
                     <mat-form-field>
                         <input matInput type="tel" 
                             maxlength=10
-                            formControlName="telefono" required
-                            >
+                            formControlName="telefono_tutor" required>
                         <mat-icon matSuffix>call</mat-icon>
                     </mat-form-field>
                 </div>
@@ -46,6 +45,7 @@
             </form>
 
         </mat-step>
+
         <mat-step [stepControl]="formAlumno" label="Datos del Alumno">
             <form [formGroup]="formAlumno">
 
@@ -106,10 +106,8 @@
                 
                 <div class="form-field">
                     <mat-label>Descuento (opcional):    </mat-label>
-                    <mat-form-field>
-                        
-                        <input matInput type="number" formControlName="descuento"
-                               max=90>
+                    <mat-form-field>     
+                        <input matInput type="number" max=90 formControlName="descuento">
                             <span matSuffix>%</span>
                     </mat-form-field>
                 </div>
@@ -128,8 +126,8 @@
                     <mat-form-field>
                         <mat-label>Tipo de Alumno</mat-label>
                         <mat-select formControlName="tipo_alumno">
-                            <mat-option value= 1> Curso Admisión</mat-option>
-                            <mat-option value= 2> Regularización </mat-option>
+                            <mat-option value= "Curso Admision"> Curso Admisión</mat-option>
+                            <mat-option value= "Regularizacion"> Regularización </mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
@@ -146,8 +144,7 @@
                     <mat-form-field>
                         <input matInput type="tel" 
                             maxlength=10
-                            formControlName="telefono" required
-                            >
+                            formControlName="telefono" required>
                         <mat-icon matSuffix>call</mat-icon>
                     </mat-form-field>
                 </div>
@@ -165,11 +162,7 @@
                 <div class="form-field">
                     <mat-label>Ciclo Escolar:    </mat-label>
                     <mat-form-field>
-                        <input matInput  
-                            maxlength=4
-                            formControlName="ciclo_escolar" required
-                            >
-                        
+                        <input matInput maxlength=4 formControlName="ciclo_escolar" required>
                     </mat-form-field>
                 </div>
 
@@ -190,6 +183,7 @@
                 </div>
             </form>
         </mat-step>
+
         <mat-step>
             <ng-template matStepLabel>Asignación de Grupo</ng-template>
             <div class="radio-button">
@@ -210,23 +204,21 @@
                 <button  (click)="getQR()"   mat-button matStepperNext >Next</button>
             </div>
         </mat-step>
+
         <mat-step>
             <ng-template matStepLabel>Generación QR</ng-template>
             <p>¡Listo , ya eres alumno!</p>
             <span> Este es tu código QR único y personal para que tomes asistencia en tus clases</span>
-            <ngx-qrcode #qrCode [value]='textoParaQR'></ngx-qrcode>
-            <br>
-            <input type="file" (change)="onFileSelected($event)" accept="image/*">
-            <img *ngIf="selectedImage" [src]="selectedImage" alt="Selected Image">
+            <ngx-qrcode [value]='textoParaQR'></ngx-qrcode>
             <br>
 
-
-            <button mat-raised-button color="primary" (click)="generarPDF()">Descargar PDF</button>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
                 <button mat-button (click)="stepper.reset()">Reset</button>
             </div>
         </mat-step>
+
     </mat-stepper>
 
 </mat-dialog-content>
+
