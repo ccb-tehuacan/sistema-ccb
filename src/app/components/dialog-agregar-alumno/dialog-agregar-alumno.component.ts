@@ -105,18 +105,27 @@ export class DialogAgregarAlumnoComponent implements OnInit{
     html2canvas(this.qrCode.qrcElement.nativeElement).then((canvas) => {
       const qrCodeImage = canvas.toDataURL('image/png');
   
-      pdf.text('FICHA DE DATOS', 90, 10);
-      pdf.addImage(qrCodeImage, 'PNG', 60, 20, 400, 100);
+      pdf.text('FICHA DE DATOS', 100, 15);
+      pdf.addImage(qrCodeImage, 'PNG', 
+      80, // posicion en x 
+      100,  // posicion en y
+      500, 100);
       //pdf.save('ficha.pdf');
+      
 
       if (this.selectedImage) {
-        const xPos = 10; // Posición X de la imagen en el PDF
-        const yPos = 80; // Posición Y de la imagen en el PDF
-        const imgWidth = 50; // Ancho de la imagen en el PDF
-        const imgHeight = 50; // Altura de la imagen en el PDF
+        const xPos = 70; // Posición X de la imagen en el PDF
+        const yPos = 30 // Posición Y de la imagen en el PDF
+        const imgWidth = 68; // Ancho de la imagen en el PDF
+        const imgHeight = 68; // Altura de la imagen en el PDF
   
-        pdf.addImage(this.selectedImage, 'JPEG', xPos, yPos, imgWidth, imgHeight);
+        pdf.addImage(this.selectedImage, 'PNG', xPos, yPos, imgWidth, imgHeight);
       }
+
+
+      pdf.line(0, 60, 60, 120);
+
+      pdf.text(`nombre`, 100,10);
 
 
        // Obtener el contenido del PDF como una cadena de datos
