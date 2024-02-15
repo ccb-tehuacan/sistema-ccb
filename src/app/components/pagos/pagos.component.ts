@@ -28,23 +28,28 @@ export class PagosComponent {
     this.alumnoService.getalumnos()
     .subscribe(data =>{
 
-      console.log(data)
+      //console.log(data)
 
       this.dataSource.data = data
 
     })
   }
 
-  registrarPago(row : any){
+  async registrarPago(row : any){
 
     console.log(row)
+    const result = await this.alumnoService.setPagoAlumno(row.id_alumnos, row.tipo_pago)
+    console.log(result)
+    this.ngOnInit()
+
 
   }
 
 
-  canDelete(algo : boolean){
+  canDelete(algo : any){
     let borrar : boolean
-    algo ?  borrar=true : borrar=false;
+    //console.log(algo)
+    algo.status_pago ?  borrar=false : borrar=true  
 
     return borrar
   }
@@ -60,16 +65,16 @@ export class PagosComponent {
     let today = new Date();  // Obteniendo la fecha actual
 
     if (newDate < today) {
-      console.log("La fecha es anterior a la fecha actual.");
+      //console.log("La fecha es anterior a la fecha actual.");
       return "Pago Pendiente"
 
         
     } else if (newDate > today) {
-        console.log("La fecha es posterior a la fecha actual.");
+       // console.log("La fecha es posterior a la fecha actual.");
         return "Sin Adeudos"
     } else {
 
-        console.log("La fecha es igual a la fecha actual.");
+        //console.log("La fecha es igual a la fecha actual.");
         return "DIA DE PAGO"
     }
 

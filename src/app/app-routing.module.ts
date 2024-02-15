@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   {
     path:'cursos-buap' ,
-    component: CursosBuapComponent
+    component: CursosBuapComponent 
   },
   {
     path:'cursos-unam' ,

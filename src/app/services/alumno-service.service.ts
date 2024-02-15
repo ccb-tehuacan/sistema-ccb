@@ -56,6 +56,16 @@ export class AlumnoServiceService {
   
     return this.http.get<any[]>(url).toPromise()
   }
+  
+  setPagoAlumno(
+    id: number,
+    tipoPago: number,
+  ):Promise<any>{
+    const url:string=`${this.apiUrl}/alumnos/pago/${id}/${tipoPago}`;
+  
+    return this.http.get<any[]>(url).toPromise()
+  }
+
 
 
 

@@ -2,10 +2,10 @@ import { CDK_TREE_NODE_OUTLET_NODE } from '@angular/cdk/tree';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UntypedFormBuilder, Validators } from '@angular/forms';
 import * as moment from 'moment';
-import { NgxQRCodeModule } from 'ngx-qrcode2';
+
 import { Alumno } from 'src/app/interfaces/alumno.interface';
 import { AlumnoServiceService } from 'src/app/services/alumno-service.service';
-import { QRCodeComponent } from 'ngx-qrcode2';
+
 
 import { NgxQRCodeModule, QrcodeComponent } from 'ngx-qrcode2';
 import jsPDF from 'jspdf';
@@ -41,6 +41,7 @@ export class DialogAgregarAlumnoComponent implements OnInit {
     ciclo_escolar: ['', Validators.required],
     proxima_fecha_pago: ['', Validators.required],
   });
+  qrImage: any;
 
   constructor(
     private formBuilder: UntypedFormBuilder,
@@ -99,15 +100,7 @@ export class DialogAgregarAlumnoComponent implements OnInit {
     this.textoParaQR = nombre
 
 
-    const img = this.qrImage?.nativeElement
-    img.src = NgxQRCodeModule.toDataURL(textoParaQR)
-
-
-
-   
-
-
-
+  
   }
 
 
